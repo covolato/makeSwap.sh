@@ -21,7 +21,7 @@ if free | awk '/^Swap:/ {exit !$2}'; then
         cat /proc/swaps
 else
         if [ -z $1 ]; then
-                MEM=$(free | awk '/^Mem:/ {print $2}')
+                MEM=$(free -b | awk '/^Mem:/ {print $2}')
         else
                 MEM=$1
         fi
